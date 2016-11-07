@@ -1,0 +1,18 @@
+<h1>Playing the longest word game</h1>
+
+<h2>Grid</h2>
+
+<div>
+  <%= session[:grid] %>
+</div>
+
+<br>
+<br>
+
+<form action="<%= score_path %>" method="get">
+  <label for="answer">Type your answer here:</label>
+  <input type="text" id="answer" name="answer" placeholder="Your answer">
+  <input type="hidden" name="grid" value="<%= @grid %>">
+  <input type="hidden" name="start_time" value="<%= Time.now %>">
+  <input type="submit" value="Go On!">
+</form>
